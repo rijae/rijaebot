@@ -1,10 +1,10 @@
 import discord
+import os
 import re
 import random
 from time import localtime, strftime, sleep
 
 client = discord.Client()
-token = "NzYxODU0Njk4NzcyNzU4NTQ5.X3gqeg.Pey4W-gxZHTLSPOxZedEkH9Nq-A"
 
 def equal_message(dm, booldm):
     return dm == booldm or dm.startswith(booldm + " ")
@@ -93,4 +93,5 @@ async def on_message(message):
     else:
         print(strftime("[%H:%M:%S]", localtime()) + message.author.name + " sent message in #" + str(message.channel.id) + ". ")
 
-client.run(token)
+access_token = os.environ["BOT TOKEN"]
+client.run(access_token)
