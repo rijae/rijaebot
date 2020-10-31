@@ -93,5 +93,5 @@ async def on_message(message):
     else:
         print(strftime("[%H:%M:%S]", localtime()) + message.author.name + " sent message in #" + str(message.channel.id) + ". ")
 
-access_token = os.environ["BOT TOKEN"]
+access_token = os.environ["BOT_TOKEN"]
 client.run(access_token)
